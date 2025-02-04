@@ -338,62 +338,92 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   }
 } 
 
-.sun {
-  margin-top: -350px;  
-  width: 40vh;
-  height: 40vh;
-  font-size: 1rem;
-  border-radius: 20vh;
-  position: absolute;
-  overflow: hidden;
-}
-.sun::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  height: 50%;
-  background-color: var(--fg-color);
-  background: var(--fg-gradient);
-  background-size: 40vh 40vh;
+.fullscreen { 
   width: 100%;
-  }
-.sun::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50%;
-  background-color: var(--fg-color);
-  background: var(--fg-gradient);
-  background-size: 40vh 40vh;
-  background-position: bottom center;
-  clip-path: polygon(
-    0 -10em, 100% -10em, 100% -10.5em, 0 -10.5em,
-  0 -9em, 100% -9em, 100% -9.5em, 0 -9.5em,
-  0 -8em, 100% -8em, 100% -8.5em, 0 -8.5em,
-  0 -7em, 100% -7em, 100% -7.5em, 0 -7.5em,
-  0 -6em, 100% -6em, 100% -6.5em, 0 -6.5em,
-  0 -5em, 100% -5em, 100% -5.5em, 0 -5.5em,
-  0 -4em, 100% -4em, 100% -4.5em, 0 -4.5em,
-  0 -3em, 100% -3em, 100% -3.5em, 0 -3.5em,
-  0 -2em, 100% -2em, 100% -2.5em, 0 -2.5em,
-  0 -1em, 100% -1em, 100% -1.5em, 0 -1.5em,
-  0 0, 100% 0, 100% -.5em, 0 -.5em,
-  0 0, 100% 0, 100% .5em, 0 .5em,
-  0 1em, 100% 1em, 100% 1.5em, 0 1.5em,
-  0 2em, 100% 2em, 100% 2.5em, 0 2.5em,
-  0 3em, 100% 3em, 100% 3.5em, 0 3.5em,
-  0 4em, 100% 4em, 100% 4.5em, 0 4.5em,
-  0 5em, 100% 5em, 100% 5.5em, 0 5.5em,
-  0 6em, 100% 6em, 100% 6.5em, 0 6.5em,
-  0 7em, 100% 7em, 100% 7.5em, 0 7.5em,
-  0 8em, 100% 8em, 100% 8.5em, 0 8.5em,
-  0 9em, 100% 9em, 100% 9.5em, 0 9.5em);
-  animation: lightEffect 20s linear infinite reverse;
+  height: 100%;
 }
 
+.fullscreen img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.fullscreen-caption {
+  position: relative;
+  top: 12.5%;
+  left: 27.5%;
+  width: 60%;
+  height: 75%;
+  z-index: 2;
+  border: 5vw solid white;
+  border-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/skater.gif");
+  border-image-slice: 10%;
+  box-shadow: 
+    0 0 100px rgba(black, 0.4),
+    inset 0 0 100px rgba(black, 0.4);
+}
+
+.fullscreen-caption .inner {
+  position: relative;
+  display: inline-block;
+  top: 100%;
+  transform: translateX(-55%) translateY(-50vh);
+}
+
+.fullscreen-caption h2,
+.fullscreen-caption h3,
+.fullscreen-caption a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fullscreen-caption h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: black;
+  text-align: left;
+  font-weight: 400;
+  font-size: 7vw;
+  line-height: 7.8vw;
+}
+
+.fullscreen-caption h3 {
+  text-align: center;
+  color: rgba(black, 0.3);
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.fullscreen-caption .fullscreen-link {
+  position: relative;
+  display: inline-block;
+  margin: 12vh 0 0 20px;
+  padding-bottom: 10px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid white;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid white;
+  }
+}
 
 
 @keyframes logo-spin {

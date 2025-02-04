@@ -74,10 +74,26 @@ const App: React.FC = () => {
           element={
             <div>
               <div className="app-body">
-                <div className="sun"></div>
-                <div className="overlay"></div>
-                <div className={`overlay glitch ${bgColor}`}></div>
-                <div className="min-h-screen welcome-text">
+              <figure className="fullscreen">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/skater.gif" alt="" />
+                <figcaption className="fullscreen-caption">
+                  <div className="inner">
+                    <h2>Coat</h2>
+                    <h3>Is a psychedelic rock band out of <br/> Oklahoma City, Oklahoma</h3>
+                    <a className="fullscreen-link"                       
+                      onClick={() => {
+                        const windowsElement =
+                          document.getElementById("live");
+                        if (windowsElement) {
+                          windowsElement.scrollIntoView({
+                            behavior: "smooth",
+                          });
+                        }
+                      }}>See Live</a>
+                  </div>
+                </figcaption>
+              </figure>                
+                {/* <div className="min-h-screen welcome-text">
                   <div className="p-8">
                     <h1 className="text-2xl font-bold pink cyber-glow:glowPulse">
                       Welcome Home
@@ -107,7 +123,15 @@ const App: React.FC = () => {
                       }}
                     ></ion-icon>
                   </div>
-                </div>
+                </div> */}
+              </div>
+              <div id="live" className="window-container flex flex-row items-center">
+                <h2 className="mt-4">Shows:</h2>
+                <ul>
+                  <li>Feb. 14 @ Speakeasy</li>
+                  <li>March 14th @ The Blue Note</li>
+                  <li>May 3rd @ Resonant Head</li>
+                </ul>
               </div>
               <div
                 id="windows"
