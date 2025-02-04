@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+.hero-info{
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* right: inherit; */
+  h1{
+    font-size: 98px;
+    font-weight: bold;
+  }
+  .hero-logo{
+    height: 200px;
+  }
+}
+
 @keyframes glowPulse {
   0% {
     text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
@@ -160,8 +175,8 @@ html, body {
 }
 
 .app-body {
- background-color: var(--bg-color);
- background: var(--bg-gradient);
+ /* background-color: var(--bg-color); */
+ /* background: var(--bg-gradient); */
  margin: 0;
  padding: 0;
  display: flex;
@@ -343,87 +358,6 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   height: 100%;
 }
 
-.fullscreen img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.fullscreen-caption {
-  position: relative;
-  top: 12.5%;
-  left: 27.5%;
-  width: 60%;
-  height: 75%;
-  z-index: 2;
-  border: 5vw solid white;
-  border-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/skater.gif");
-  border-image-slice: 10%;
-  box-shadow: 
-    0 0 100px rgba(black, 0.4),
-    inset 0 0 100px rgba(black, 0.4);
-}
-
-.fullscreen-caption .inner {
-  position: relative;
-  display: inline-block;
-  top: 100%;
-  transform: translateX(-55%) translateY(-50vh);
-}
-
-.fullscreen-caption h2,
-.fullscreen-caption h3,
-.fullscreen-caption a {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.fullscreen-caption h2 {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: black;
-  text-align: left;
-  font-weight: 400;
-  font-size: 7vw;
-  line-height: 7.8vw;
-}
-
-.fullscreen-caption h3 {
-  text-align: center;
-  color: rgba(black, 0.3);
-  font-weight: 700;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
-.fullscreen-caption .fullscreen-link {
-  position: relative;
-  display: inline-block;
-  margin: 12vh 0 0 20px;
-  padding-bottom: 10px;
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 2px solid white;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: -20px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid white;
-  }
-}
 
 
 @keyframes logo-spin {
@@ -471,16 +405,6 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	pointer-events: none;
 }
 
-#clock {
-	background-image: url(https://ouch-cdn2.icons8.com/ggxsAQVGAa4GMIlNl6vMuk0ANcEK07E5woeRpplKofI/rs:fit:945:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMzI0/L2RmMDQzMzc4LTcy/NTUtNDA5My04ZDQy/LTgxOTJjNmE2ZmQx/ZC5wbmc.png);
-	width: 170px;
-	height: 170px;
-	background-size: 100% auto;
-	background-position: left top;
-	bottom: 520px;
-	margin-left: 440px;
-}
-
 .mirror{
   width: 220px;
   height: 450px;
@@ -511,7 +435,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHRkcTZnaGNxMWdqdThoamRmM3lkaWt5OTJhcnYwdWY3YTgyY2N5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiQyka2vyWF5EqPok/giphy.gif);
+	background-image: url("/images/coat-milk.jpg");
 	background-position: center center;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
@@ -529,8 +453,8 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url("/images/library-three.webp");  
-	background-position: center center;
+	background-image: url("/images/door.jpg");  
+	background-position: 65% center;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	box-shadow: inset 6px 3px 10px rgba(0, 0, 0, 0.4);
@@ -638,4 +562,266 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   h1{
     font-size: 38px;
   }
+}
+
+/* hero sound pit */
+.canvas-mask {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2560px;
+  height: 800px;
+  margin-left: -1280px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.3) 40%, 
+    rgba(0,0,0,0.9) 60%, 
+    rgba(0,0,0,0.3) 80%, 
+    rgba(0,0,0,0) 100%);
+  
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.9) 0%, 
+      rgba(0,0,0,0.3) 20%, 
+      rgba(0,0,0,0) 50%, 
+      rgba(0,0,0,0.3) 80%, 
+      rgba(0,0,0,0.9) 100%);
+  }
+}
+
+/* waves */
+.c {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateX(45deg);
+	/* 	Native CSS properties don't support the customization of border-style. Therefore, we use a trick with an SVG image inside background-image property. 
+	https://kovart.github.io/dashed-border-generator/
+	*/
+	/* 	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='aqua' stroke-width='1' stroke-dasharray='1' stroke-dashoffset='1' stroke-linecap='butt'/%3e%3c/svg%3e"); */
+	border-radius: 50%;
+	border: 1px dotted aqua;
+	animation: dripBounce 5s infinite;
+}
+@keyframes dripBounce {
+	/* 	0%{top:50%} */
+	10% {
+		top: calc(50% + 5px);
+	}
+	20% {
+		top: calc(50% - 5px);
+	}
+	35% {
+		top: 50%;
+	}
+}
+.c1 {
+	height: 10px;
+	width: 20px;
+	animation-delay: -10s;
+}
+.c2 {
+	height: 20px;
+	width: 40px;
+	animation-delay: -9.8s;
+	top: calc(50% + 1px);
+}
+.c3 {
+	height: 30px;
+	width: 60px;
+	animation-delay: -9.6s;
+	top: calc(50% + 2px);
+}
+.c4 {
+	height: 40px;
+	width: 80px;
+	animation-delay: -9.4s;
+	top: calc(50% + 3px);
+}
+.c5 {
+	height: 50px;
+	width: 100px;
+	animation-delay: -9.2s;
+	top: calc(50% + 4px);
+}
+.c6 {
+	height: 60px;
+	width: 120px;
+	animation-delay: -9s;
+	top: calc(50% + 5px);
+}
+.c7 {
+	height: 70px;
+	width: 140px;
+	animation-delay: -8.8s;
+	top: calc(50% + 6px);
+}
+.c8 {
+	height: 80px;
+	width: 160px;
+	animation-delay: -8.6s;
+	top: calc(50% + 7px);
+}
+.c9 {
+	height: 90px;
+	width: 180px;
+	animation-delay: -8.4s;
+	top: calc(50% + 8px);
+}
+.c10 {
+	height: 100px;
+	width: 200px;
+	animation-delay: -8.2s;
+	top: calc(50% + 9px);
+}
+.c11 {
+	height: 110px;
+	width: 220px;
+	animation-delay: -8s;
+	top: calc(50% + 10px);
+}
+.c12 {
+	height: 120px;
+	width: 240px;
+	animation-delay: -7.8s;
+	top: calc(50% + 11px);
+}
+.c13 {
+	height: 130px;
+	width: 260px;
+	animation-delay: -7.6s;
+	top: calc(50% + 12px);
+}
+.c14 {
+	height: 140px;
+	width: 280px;
+	animation-delay: -7.4s;
+	top: calc(50% + 13px);
+}
+.c15 {
+	height: 150px;
+	width: 300px;
+	animation-delay: -7.2s;
+	top: calc(50% + 14px);
+}
+.c16 {
+	height: 160px;
+	width: 320px;
+	animation-delay: -7s;
+	top: calc(50% + 15px);
+}
+.c17 {
+	height: 170px;
+	width: 340px;
+	animation-delay: -6.8s;
+	top: calc(50% + 16px);
+}
+.c18 {
+	height: 180px;
+	width: 360px;
+	animation-delay: -6.6s;
+	top: calc(50% + 17px);
+}
+.c19 {
+	height: 190px;
+	width: 380px;
+	animation-delay: -6.4s;
+	top: calc(50% + 18px);
+}
+.c20 {
+	height: 200px;
+	width: 400px;
+	animation-delay: -6.2s;
+	top: calc(50% + 19px);
+}
+.c21 {
+	height: 210px;
+	width: 420px;
+	animation-delay: -6s;
+	top: calc(50% + 20px);
+}
+.c22 {
+	height: 220px;
+	width: 440px;
+	animation-delay: -5.8s;
+	top: calc(50% + 21px);
+}
+.c23 {
+	height: 230px;
+	width: 460px;
+	animation-delay: -5.6s;
+	top: calc(50% + 22px);
+}
+.c24 {
+	height: 240px;
+	width: 480px;
+	animation-delay: -5.4s;
+	top: calc(50% + 23px);
+}
+.c25 {
+	height: 250px;
+	width: 500px;
+	animation-delay: -5.2s;
+	top: calc(50% + 24px);
+}
+.c26 {
+	height: 260px;
+	width: 520px;
+	animation-delay: -5s;
+	top: calc(50% + 25px);
+}
+.c27 {
+	height: 270px;
+	width: 540px;
+	animation-delay: -4.8s;
+	top: calc(50% + 26px);
+}
+.c28 {
+	height: 280px;
+	width: 560px;
+	animation-delay: -4.6s;
+	top: calc(50% + 27px);
+}
+.c29 {
+	height: 290px;
+	width: 580px;
+	animation-delay: -4.4s;
+	top: calc(50% + 28px);
+}
+.c30 {
+	height: 300px;
+	width: 600px;
+	animation-delay: -4.2s;
+	top: calc(50% + 29px);
+}
+.l {
+	height: 20px;
+	width: 1px;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: aqua;
+	animation: drip 5s infinite;
+	animation-delay: -10.3s;
+}
+@keyframes drip {
+	0% {
+		opacity: 1;
+		top: 0%;
+	}
+	10% {
+		opacity: 0.1;
+		top: calc(50% + 10px);
+	}
+	100% {
+		opacity: 0;
+	}
 }

@@ -29,6 +29,10 @@
   );
   --primary-color: #f472b6;
   --secondary-color: #f472b6;
+  --hue-color: #d775ff;
+  --hue-light-color: color-mix(in srgb, var(--hue-color) 60%, white);
+  --hue-dark-color: color-mix(in srgb, var(--hue-color) 70%, black);
+  
 }
 
 #root {
