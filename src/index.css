@@ -40,6 +40,13 @@
   /* background-image: url("/images/cyberBg.jpg") !important; */
 }
 
+h1, h2, h3, h4, a, p, li{
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-optical-sizing: auto;
+  font-style: normal; 
+}
+
 a {
   font-weight: 500;
   color: #646cff;

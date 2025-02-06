@@ -1,32 +1,5 @@
 @import "tailwindcss";
 
-.hero-info{
-  position: absolute;
-  top: 24%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* right: inherit; */
-  h1{
-    font-size: 98px;
-    font-weight: bold;
-  }
-  .hero-logo{
-    height: 200px;
-  }
-}
-
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
-  }
-  50% {
-    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
-  }  
-  100%{
-    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
-  }
-}
-
 html, body {
   height: 100%;
   margin: 0;
@@ -52,6 +25,133 @@ html, body {
   border-radius: 10px;
   /* color: white; */
 }
+
+.dropdown-menu{
+  width: 100%;
+  background-color: rgb(172, 165, 165);
+  li{
+    color: black;
+  }
+}
+
+.app-body {
+  background: #0e016f;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  /* filter: blur(40px) saturate(5); */
+}
+#heat-map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  filter: blur(40px) saturate(10);
+}
+#heat-map div {
+  height: 60%;
+  width: 60%;
+  background: #fc00ff;
+  background: radial-gradient(circle, #ff0044 , #00dbde);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-info{
+  position: relative;
+  z-index: 100;
+  color: white;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.5); */
+  h1{
+      font-family: "Cinzel", serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;        
+    font-size: 98px;
+    font-weight: bold;
+  }
+  .hero-logo{
+    height: 200px;
+  }
+}
+
+.live{
+  min-height: 100vh;
+  h2{
+    font-size: 48px;
+  }
+  .shows{
+    width: 80%;
+    margin: 0px auto;
+    padding-bottom: 80px;
+  }
+  ul li{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    font-size: 32px;
+    min-height: 80px;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);    
+    font-style: italic;
+    padding: 20px 0px;
+    .city{
+      font-size: 16px;
+    }
+  }
+  ul li:first-child{
+    border-top: 2px solid rgba(255, 255, 255, 0.2);    
+  }
+  .date{
+    text-align: left;
+    padding-left: 25px;
+    flex: 1;
+  }
+  .location{
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .time{
+    text-align: right;
+    flex: 1;
+    padding-right: 25px;
+  }  
+  .city {
+    font-size: 16px;
+    font-style: normal;
+    opacity: 0.8; /* Slight transparency for better readability */
+    margin-top: 4px;
+  }  
+}
+
+/* LISTEN PAGE */
+.spotify-wrapper{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+  }  
+  100%{
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+  }
+}
+
+
 
 .cyber-glow{
   margin: 0 0 16px 0;
@@ -607,7 +707,8 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	*/
 	/* 	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='aqua' stroke-width='1' stroke-dasharray='1' stroke-dashoffset='1' stroke-linecap='butt'/%3e%3c/svg%3e"); */
 	border-radius: 50%;
-	border: 1px dotted aqua;
+	/* border: 1px dotted aqua; */
+  border: 1px dotted #f54171;
 	animation: dripBounce 5s infinite;
 }
 @keyframes dripBounce {

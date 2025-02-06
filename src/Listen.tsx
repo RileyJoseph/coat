@@ -58,19 +58,54 @@ const Listen: React.FC = () => {
           className="w-64 h-64 mb-4"
         />
       ) : (
-        <>
-          <iframe
-            style={{ borderRadius: "12px", zIndex: "1000" }}
-            src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?si=b65db3b5b88447af?utm_source=generator"
-            width="50%"
-            height="152"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Spotify Playlist"
-            className="spotify"
-          ></iframe>
-
-        </>
+        <div className="app-body">
+          <div className="canvas-mask">
+            {/* <immg src="https://i.pinimg.com/originals/15/2b/a2/152ba2bdfbdbeeea8d0d64451347399c.gif" /> */}
+              <div className="c c1"></div>
+              <div className="c c2"></div>
+              <div className="c c3"></div>
+              <div className="c c4"></div>
+              <div className="c c5"></div>
+              <div className="c c6"></div>
+              <div className="c c7"></div>
+              <div className="c c8"></div>
+              <div className="c c9"></div>
+              <div className="c c10"></div>
+              <div className="c c11"></div>
+              <div className="c c12"></div>
+              <div className="c c13"></div>
+              <div className="c c14"></div>
+              <div className="c c15"></div>
+              <div className="c c16"></div>
+              <div className="c c17"></div>
+              <div className="c c18"></div>
+              <div className="c c19"></div>
+              <div className="c c20"></div>
+              <div className="c c21"></div>
+              <div className="c c22"></div>
+              <div className="c c23"></div>
+              <div className="c c24"></div>
+              <div className="c c25"></div>
+              <div className="c c26"></div>
+              <div className="c c27"></div>
+              <div className="c c28"></div>
+              <div className="c c29"></div>
+              <div className="c c30"></div>
+              {/* <div className="l"></div>                 */}    
+            <div className="spotify-wrapper">
+            <iframe
+              style={{ borderRadius: "12px", zIndex: "1000" }}
+              src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?si=b65db3b5b88447af?utm_source=generator"
+              width="50%"
+              height="152"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Spotify Playlist"
+              className="spotify"
+            ></iframe>
+            </div>      
+          </div>          
+        </div>
       )}
     </div>
   );
