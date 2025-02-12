@@ -19,10 +19,10 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
           {isDropdownOpen && (
             <ul className="absolute mt-2 shadow-lg rounded dropdown-menu">
               <li>
-                <Link to="/listen" className="">Listen</Link>                
+                <Link to="/listen" className="link">Listen</Link>                
               </li>
               <li>
-                <Link to="/#live" className="">Live</Link>
+                <Link to="/#live" className="link">Live</Link>
               </li>
             </ul>
           )}

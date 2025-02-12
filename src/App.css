@@ -28,9 +28,19 @@ html, body {
 
 .dropdown-menu{
   width: 100%;
-  background-color: rgb(172, 165, 165);
+  background-color: #ffffff;
+  flex-direction: column; /* Ensures vertical stacking */
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
   li{
-    color: black;
+    display: flex;
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    min-height: 40px;    
+    font-size: 18px;
+    .link{
+      color: black;
+    }
   }
 }
 
@@ -67,10 +77,10 @@ html, body {
   text-align: center;
   /* background: rgba(0, 0, 0, 0.5); */
   h1{
-      font-family: "Cinzel", serif;
-      font-optical-sizing: auto;
-      font-weight: bold;
-      font-style: normal;        
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;        
     font-size: 98px;
     font-weight: bold;
   }
