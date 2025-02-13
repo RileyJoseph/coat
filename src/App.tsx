@@ -4,6 +4,7 @@ import Listen from "./Listen";
 import Live from "./Live";
 import Footer from "./Footer";
 import Home from "./Home"; 
+import Bio from "./Bio";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/listen" element={<Listen />} />
         <Route path="/live" element={<Live />} />
+        <Route path="/bio" element={<Bio />} />
       </Routes>
       <Footer />
     </Router>

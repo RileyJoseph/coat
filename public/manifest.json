@@ -1,5 +1,5 @@
 {
- "name": "Riley's Site",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,9 +37,5 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ],
- "start_url": "/",
- "display": "standalone",
- "background_color": "#ffffff",
- "theme_color": "#000000"
+ ]
 }

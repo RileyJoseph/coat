@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-const GameMirror: React.FC = () => {
+const LoungeMirror: React.FC = () => {
   const navigate = useNavigate();
 
   const handleClick = (): void => {
-    navigate("/vapor-lounge"); // Navigate to the BookRecommendations page
+    navigate("/listen"); // Navigate to the BookRecommendations page
   };
 
   return (
@@ -23,4 +23,4 @@ const GameMirror: React.FC = () => {
   );
 };
 
-export default GameMirror;
+export default LoungeMirror;

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import BandcampWindow from "./windows/BandcampWindow";
-import LibraryWindow from "./windows/LibraryWindow";
+import BioWindow from "./windows/BioWindow";
 import LoungeWindow from "./windows/LoungeWindow";
 
 const blobCount = 20;
@@ -76,8 +76,8 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div id="live" className="live">
-        <h2 className="mt-32">Upcoming Shows:</h2>
+      <div id="live" className="live flex items-center justify-center pulse-border">
+        <h2 className="">Upcoming Shows:</h2>
         <div className="shows">
           <ul className="mt-8">
             <li><span className="date">Feb. 14</span> <span className="location">The 51st St. Speakeasy <span className="city">Oklahoma City, OK</span></span><span className="time">9:00</span></li>
@@ -89,14 +89,15 @@ const Home: React.FC = () => {
       </div>
 
       <div id="windows" className="window-container flex flex-col items-center pulse-border">
+        <h2 className="header">LINKS</h2>
         <div className="scene flex flex-wrap justify-center gap-32 w-full">
           <div className="window-div text-xl flex flex-col items-center">
             <LoungeWindow />
             <h2 className="text-center mt-4 text-2xl secondary">「 l i s t e n 」</h2>
           </div>
           <div className="window-div text-xl flex flex-col items-center">
-            <LibraryWindow />
-            <h2 className="text-center mt-4 text-2xl secondary">「 m e r c h 」</h2>
+            <BioWindow />
+            <h2 className="text-center mt-4 text-2xl secondary">「 a b o u t 」</h2>
           </div>
           <div className="window-div text-xl flex flex-col items-center">
             <BandcampWindow />

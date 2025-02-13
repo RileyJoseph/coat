@@ -49,8 +49,29 @@ html, body {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  /* filter: blur(40px) saturate(5); */
 }
+.about-us{
+  background: #0e016f;
+  background-image: url("/images/coat-marquee.JPG");
+  background-position: 50% 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .about-us-hero{ 
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+  }
+  .bio-text{
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 70%;
+    font-size: 18px;
+    padding: 20px;
+  }
+  .bold{
+    font-weight: bold;
+  }
+}
+
 #heat-map {
   height: 100%;
   width: 100%;
@@ -91,6 +112,11 @@ html, body {
 
 .live{
   min-height: 100vh;
+  flex-direction: column;
+  background-image: url("/images/band-psych.JPG");
+  background-position: 50% 5%;
+  background-size: cover;
+  background-repeat: no-repeat;  
   h2{
     font-size: 48px;
   }
@@ -109,11 +135,16 @@ html, body {
     position: relative;
     padding: 10px 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);    
+    background-color: rgba(0, 0, 0, 0.4);
     font-style: italic;
     padding: 20px 0px;
     .city{
       font-size: 16px;
     }
+  }
+  ul li:hover{
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(110%)
   }
   ul li:first-child{
     border-top: 2px solid rgba(255, 255, 255, 0.2);    
@@ -297,16 +328,6 @@ html, body {
  overflow: hidden;
 }
 
-.chatbox {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 350px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 ion-icon.down-arrow {
   margin-top: 50px;
   transition: transform 0.3s;
@@ -327,7 +348,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
   overflow: hidden;  
 }
@@ -374,6 +395,32 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
     background-color: white;
     border: 2px solid black;
   }
+}
+
+.footer{
+  a{
+    color: white;
+  }
+  h2{
+    font-size: 28px;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 0px 15px;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }  
 }
 
 .home-btns\:bounceOrig:hover { animation: bounceOrig 1s infinite; }
@@ -516,8 +563,8 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 }
 
 .mirror{
-  width: 220px;
-  height: 450px;
+  width: 250px;
+  height: 400px;
 	position: relative;
 	box-shadow: 16px 2px 10px rgba(0, 0, 0, 0.4);
 	perspective: 500px;
@@ -563,8 +610,8 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url("/images/door.jpg");  
-	background-position: 65% center;
+	background-image: url("/images/band-stairs.jpg");  
+	background-position: 50% center;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	box-shadow: inset 6px 3px 10px rgba(0, 0, 0, 0.4);
@@ -581,8 +628,8 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-image: url("/images/pixel-window-gif.gif");
-	background-position: center center;
+	background-image: url("/images/door.jpg");
+  background-position: 60% center;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	box-shadow: inset 6px 3px 10px rgba(0, 0, 0, 0.4);
@@ -935,4 +982,19 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	100% {
 		opacity: 0;
 	}
+}
+
+
+@media (width <= 777px) {
+  .about-us{
+    background-image: url("/images/hannah-psych.JPG");
+    background-position: 50% 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .bio-text{
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 75%;
+      padding: 20px;
+    }
+  }
 }
