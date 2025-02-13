@@ -17,7 +17,7 @@ const Bio: React.FC = () => {
           and dive deeper into the well of experimental sound.
           </p>
           <br />
-          <p className="bold">Coat is anti-facist and promotes love and inclusion. Bigots can get fucked.</p>
+          <p className="bold">Coat is anti-facist and promotes love and inclusion. <br /> Bigots can get fucked.</p>
           <br />
           <p>Support us by buying our music on <a target="_blank" href="https://coattheband.bandcamp.com/">Bandcamp.</a></p>
           <p>Support Oklahoma Teachers <a href="https://catapultrecordings.bandcamp.com/album/help-oklahoma-teachers" target="_blank">here.</a></p>
