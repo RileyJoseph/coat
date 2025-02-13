@@ -22,8 +22,8 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
                 <Link to="/listen" className="link">Listen</Link>                
               </li>
               <li>
-                <Link to="/#live" className="link">Live</Link>
-              </li>
+                <Link to="/bio" className="link">About Us</Link>
+              </li>              
             </ul>
           )}
         </div>

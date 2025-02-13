@@ -18,6 +18,12 @@ html, body {
   width: 100%;
   z-index: 1000;
   height: 80px;
+  li{
+    padding: 10px;
+    a{
+      font-size: 14px;
+    }
+  }
 }
 
 .dropdown{
@@ -27,7 +33,7 @@ html, body {
 }
 
 .dropdown-menu{
-  width: 100%;
+  width: 90px;
   background-color: #ffffff;
   flex-direction: column; /* Ensures vertical stacking */
   align-items: center; /* Centers horizontally */
