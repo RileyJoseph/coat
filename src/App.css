@@ -50,6 +50,14 @@ html, body {
   }
 }
 
+.blue{
+  color: #4f82b2;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
 .app-body {
   background: #0e016f;
   overflow: hidden;
@@ -58,18 +66,26 @@ html, body {
 }
 .about-us{
   background: #0e016f;
-  background-image: url("/images/coat-marquee.JPG");
+  /* background-image: url("/images/coat-marquee.JPG"); */
   background-position: 50% 80%;
   background-size: cover;
   background-repeat: no-repeat;
-  .about-us-hero{ 
+  .bio-pic{
+    background: #0e016f;
+    background-image: url("/images/coat-marquee.JPG");
+    background-position: 50% 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .about-us-text{ 
     flex-direction: column;
-    width: 100%;
-    height: 500px;
+    background-color: black;
+    /* width: 100%; */
+    /* height: 500px; */
   }
   .bio-text{
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 70%;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    width: 80%;
     font-size: 18px;
     padding: 20px;
   }
@@ -254,7 +270,7 @@ html, body {
 }
 
 .vapor-lounge{
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .home-logo {
@@ -578,6 +594,17 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	cursor: pointer;
 }
 
+.panels{
+  width: 100%;
+  flex-direction: row;
+  .listen-panel{
+    background-image: url("/images/coat-milk.jpg");
+    background-position: center center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  } 
+}
+
 #mirror {
   /* margin-right: 350px; */
 }
@@ -730,7 +757,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   top: 0;
   left: 50%;
   width: 2560px;
-  height: 800px;
+  height: 100%;
   margin-left: -1280px;
   background-image: linear-gradient(
     to right,
@@ -987,16 +1014,38 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	}
 }
 
+@media (width <= 1100px) {
+  .about-us{
+    .bio-text{
+      width: 90%;
+    }
+  }
+}
+
+@media (width <= 900px) {
+  .about-us{
+    flex-direction: column; 
+    .bio-pic{
+      width: 100%;
+      height: 300px;
+    }
+    .about-us-text{
+      width: 100%;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .bio-text{
+      width: 85%;
+      padding: 20px;
+    }
+  }
+}
+
 
 @media (width <= 777px) {
   .about-us{
-    background-image: url("/images/hannah-psych.JPG");
-    background-position: 50% 5%;
-    background-size: cover;
-    background-repeat: no-repeat;
     .bio-text{
-      background-color: rgba(0, 0, 0, 0.7);
-      width: 75%;
+      width: 95%;
       padding: 20px;
     }
   }

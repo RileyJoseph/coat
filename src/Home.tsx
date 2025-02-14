@@ -76,7 +76,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div id="live" className="live flex items-center justify-center pulse-border">
+      <div id="live" className="live flex items-center , pulse-border">
         <h2 className="">Upcoming Shows:</h2>
         <div className="shows">
           <ul className="mt-8">
@@ -88,22 +88,21 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div id="windows" className="window-container flex flex-col items-center pulse-border">
-        <h2 className="header">LINKS</h2>
-        <div className="scene flex flex-wrap justify-center gap-32 w-full">
-          <div className="window-div text-xl flex flex-col items-center">
-            <LoungeWindow />
+      <div id="windows" className="window-container panels flex items-center pulse-border">
+        {/* <div className="panels scene flex flex-wrap justify-center gap-32 w-full"> */}
+          <div className="window-div listen-panel text-xl flex flex-col items-center">
+            {/* <LoungeWindow /> */}
             <h2 className="text-center mt-4 text-2xl secondary">「 l i s t e n 」</h2>
           </div>
-          <div className="window-div text-xl flex flex-col items-center">
-            <BioWindow />
+          <div className="window-div bio-panel text-xl flex flex-col items-center">
+            {/* <BioWindow /> */}
             <h2 className="text-center mt-4 text-2xl secondary">「 a b o u t 」</h2>
           </div>
-          <div className="window-div text-xl flex flex-col items-center">
-            <BandcampWindow />
+          <div className="window-div bandcamp-panel text-xl flex flex-col items-center">
+            {/* <BandcampWindow /> */}
             <h2 className="text-center mt-4 text-2xl secondary">「 b a n d c a m p 」</h2>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
