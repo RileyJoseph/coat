@@ -1,100 +1,35 @@
 import React, { useState, useEffect } from "react";
 
-// Define message type
-interface Message {
-  sender: "user" | "bot";
-  text: string;
-}
-
 const Listen: React.FC = () => {
-  const [bgColor, setBgColor] = useState<string>("bg-white");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
 
-  const API_BASE_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:8888/.netlify/functions/api"
-      : "/.netlify/functions/api";
-
-  // Function to send messages
-  const sendMessage = async (): Promise<void> => {
-    if (!input.trim()) return;
-
-    const newMessages: Message[] = [...messages, { sender: "user", text: input }];
-    setMessages(newMessages);
-    setInput("");
-
-    try {
-      const response = await fetch(`${API_BASE_URL}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newMessages }),
-      });
-
-      const data = await response.json();
-      setMessages([...newMessages, { sender: "bot", text: data.message }]);
-    } catch (error) {
-      console.error("Error fetching response:", error);
-      setMessages([...newMessages, { sender: "bot", text: "Error occurred." }]);
-    }
-  };
-
-  // Simulate loading effect
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 4000);
+    const timeout = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <div className="listen flex flex-col items-center justify-center min-h-screen">
       <h1>Listen</h1>
-      <div className="youtube grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center w-full mt-8">                
-        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/9f59A-X0570?si=3NRxGjKBMAdCAq9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/D25OfCbxZdE?si=WuCNkByBxkn0pmjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/Fxx7UDfw6tY?si=uHkw6ogDQlUUE_9q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/S5VK0YN5Qgg?si=y6_9uMxmIpeZ0sG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      </div>
-      {/* <div className="canvas-mask">
-          <div className="c c1"></div>
-          <div className="c c2"></div>
-          <div className="c c3"></div>
-          <div className="c c4"></div>
-          <div className="c c5"></div>
-          <div className="c c6"></div>
-          <div className="c c7"></div>
-          <div className="c c8"></div>
-          <div className="c c9"></div>
-          <div className="c c10"></div>
-          <div className="c c11"></div>
-          <div className="c c12"></div>
-          <div className="c c13"></div>
-          <div className="c c14"></div>
-          <div className="c c15"></div>
-          <div className="c c16"></div>
-          <div className="c c17"></div>
-          <div className="c c18"></div>
-          <div className="c c19"></div>
-          <div className="c c20"></div>
-          <div className="c c21"></div>
-          <div className="c c22"></div>
-          <div className="c c23"></div>
-          <div className="c c24"></div>
-          <div className="c c25"></div>
-          <div className="c c26"></div>
-          <div className="c c27"></div>
-          <div className="c c28"></div>
-          <div className="c c29"></div>
-          <div className="c c30"></div>
-          <div className="l"></div>                    
-</div> */}
-        {/* </div> */}
-        {/* <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7fAvIUJJUk4DIckyRczLmW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> */}
-        <div className="spotify-wrapper grid grid-cols-1 md:grid-cols-2 gap-8 p-8 m-8 w-full">   
-          <div className="playlist w-full"><iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/artist/7fAvIUJJUk4DIckyRczLmW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-          <div className="playlist w-full"><iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="400" style={{width:"100%", maxWidth:"660px", overflow:"hidden", background:"transparent"}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/coat-ep/1725241427"></iframe></div>
-        </div>      
-      {/* </div>           */}
+      {isLoading ? (
+        <div className="flex items-center justify-center h-64">
+          <p className="text-lg font-semibold animate-pulse">Loading...</p>
+        </div>
+      ) : (
+        <div>
+        <div className="youtube grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center w-full mt-8">                
+          <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/9f59A-X0570?si=3NRxGjKBMAdCAq9o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>
+          <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/D25OfCbxZdE?si=WuCNkByBxkn0pmjE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>
+          <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/Fxx7UDfw6tY?si=uHkw6ogDQlUUE_9q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>
+          <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/S5VK0YN5Qgg?si=y6_9uMxmIpeZ0sG3" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>
+        </div>
+
+          <div className="spotify-wrapper grid grid-cols-1 md:grid-cols-2 gap-8 p-8 m-8 w-full">   
+            <div className="playlist w-full"><iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/artist/7fAvIUJJUk4DIckyRczLmW?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div className="playlist w-full"><iframe allow="autoplay *; encrypted-media *;" height="400" style={{width:"100%", maxWidth:"660px", overflow:"hidden", background:"transparent"}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/coat-ep/1725241427"></iframe></div>
+          </div>     
+        </div>
+      )} 
     </div>
   );
 };

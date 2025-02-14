@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const Navbar: React.FC<NavbarProps> = ({ }) => {
+const Navbar: React.FC = ({ }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   return (

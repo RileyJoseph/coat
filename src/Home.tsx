@@ -5,7 +5,7 @@ import gsap from "gsap";
 const blobCount = 20;
 
 const Home: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation(); 
   const navigate = useNavigate();
 
@@ -51,7 +51,9 @@ const Home: React.FC = () => {
       tl.to(blobs[i], time * 2, { left: randy(-40, 130) + "%", ease: "sine.inOut" }, 0);
     }
 
-    return () => tl.kill(); 
+    return () => {
+      tl.kill(); // ✅ Ensure cleanup function explicitly returns void
+    };
 
   }, [location.pathname]); 
 
