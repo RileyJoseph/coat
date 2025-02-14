@@ -47,12 +47,13 @@ const Listen: React.FC = () => {
   }, []);
 
   return (
-    <div className="app-body flex flex-col items-center justify-center min-h-screen">
-      <div className="youtube grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center w-full">        
-        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/9f59A-X0570?si=3NRxGjKBMAdCAq9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/D25OfCbxZdE?si=WuCNkByBxkn0pmjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/Fxx7UDfw6tY?si=uHkw6ogDQlUUE_9q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/S5VK0YN5Qgg?si=y6_9uMxmIpeZ0sG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div className="listen flex flex-col items-center justify-center min-h-screen">
+      <h1>Listen</h1>
+      <div className="youtube grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center w-full mt-8">                
+        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/9f59A-X0570?si=3NRxGjKBMAdCAq9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/D25OfCbxZdE?si=WuCNkByBxkn0pmjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/Fxx7UDfw6tY?si=uHkw6ogDQlUUE_9q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="500" height="315" src="https://www.youtube.com/embed/S5VK0YN5Qgg?si=y6_9uMxmIpeZ0sG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       </div>
       {/* <div className="canvas-mask">
           <div className="c c1"></div>
@@ -88,18 +89,9 @@ const Listen: React.FC = () => {
           <div className="l"></div>                    
 </div> */}
         {/* </div> */}
-        <div className="spotify-wrapper">   
-        <iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                     
-        {/* <iframe
-          style={{ borderRadius: "12px", zIndex: "1000" }}
-          src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?si=b65db3b5b88447af?utm_source=generator"
-          width="50%"
-          height="152"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          title="Spotify Playlist"
-          className="spotify"
-        ></iframe> */}
+        <div className="spotify-wrapper grid grid-cols-1 md:grid-cols-2 gap-8 p-8 m-8 w-full">   
+          <div className="playlist w-full"><iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          <div className="playlist w-full"><iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="400" style={{width:"100%", maxWidth:"660px", overflow:"hidden", background:"transparent"}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/coat-ep/1725241427"></iframe></div>
         </div>      
       {/* </div>           */}
     </div>

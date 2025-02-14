@@ -196,8 +196,17 @@ html, body {
 }
 
 /* LISTEN PAGE */
+
+.listen{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 .spotify-wrapper{
   padding-top: 40px;
+  .playlist{
+    padding: 0px 20px;
+  }
   /* position: absolute; */
   /* top: 20%; */
   /* left: 50%; */
@@ -1051,6 +1060,9 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
       width: 85%;
       padding: 20px;
     }
+  }
+  .listen .playlist{
+    width: 100%;
   }
 }
 
