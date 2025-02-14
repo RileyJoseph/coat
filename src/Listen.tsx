@@ -89,8 +89,9 @@ const Listen: React.FC = () => {
           <div className="l"></div>                    
 </div> */}
         {/* </div> */}
+        {/* <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7fAvIUJJUk4DIckyRczLmW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> */}
         <div className="spotify-wrapper grid grid-cols-1 md:grid-cols-2 gap-8 p-8 m-8 w-full">   
-          <div className="playlist w-full"><iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          <div className="playlist w-full"><iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/artist/7fAvIUJJUk4DIckyRczLmW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
           <div className="playlist w-full"><iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="400" style={{width:"100%", maxWidth:"660px", overflow:"hidden", background:"transparent"}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/coat-ep/1725241427"></iframe></div>
         </div>      
       {/* </div>           */}
