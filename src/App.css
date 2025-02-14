@@ -197,9 +197,10 @@ html, body {
 
 /* LISTEN PAGE */
 .spotify-wrapper{
-  position: absolute;
-  top: 20%;
-  left: 50%;
+  padding-top: 40px;
+  /* position: absolute; */
+  /* top: 20%; */
+  /* left: 50%; */
 }
 
 @keyframes glowPulse {
@@ -454,7 +455,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 .pulse-border {
   border-top: 6px solid var(--secondary-color);
   animation: border-pulse 2s infinite; 
-  padding: 1rem; 
+  /* padding: 1rem;  */
 }
 
 @keyframes c {
@@ -594,27 +595,39 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 	cursor: pointer;
 }
 
-.panels{
-  width: 100%;
-  flex-direction: row;
-  .listen-panel{
-    background-image: url("/images/coat-milk.jpg");
-    background-position: center center;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-  } 
+.panels {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
 }
 
-#mirror {
-  /* margin-right: 350px; */
+.window-div {
+  width: 33.33%;
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px
 }
 
-#mirror-two {
-  /* margin-right: 350px; */
+.listen-panel {
+  background-image: url("/images/hannah-psych.JPG");
 }
 
-#mirror-three {
-  /* margin-right: 350px; */
+.bio-panel {
+  background-image: url("/images/band-stairs.jpg");
+}
+
+.bandcamp-panel {
+  background-image: url("/images/door.jpg");
+  background-position: 60% center;
+}
+
+.panel:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 #mirror-content {

@@ -6,10 +6,12 @@ import Footer from "./Footer";
 import Home from "./Home"; 
 import Bio from "./Bio";
 import "./App.css";
+import ScrollTop from "./ScrollTop"; 
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -47,9 +47,14 @@ const Listen: React.FC = () => {
   }, []);
 
   return (
-    <div className="app-body vapor-lounge flex flex-col items-center min-h-screen">
-      <div className="canvas-mask">
-        {/* <immg src="https://i.pinimg.com/originals/15/2b/a2/152ba2bdfbdbeeea8d0d64451347399c.gif" /> */}
+    <div className="app-body flex flex-col items-center justify-center min-h-screen">
+      <div className="youtube grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center w-full">        
+        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/9f59A-X0570?si=3NRxGjKBMAdCAq9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/D25OfCbxZdE?si=WuCNkByBxkn0pmjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/Fxx7UDfw6tY?si=uHkw6ogDQlUUE_9q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className="m-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/S5VK0YN5Qgg?si=y6_9uMxmIpeZ0sG3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+      {/* <div className="canvas-mask">
           <div className="c c1"></div>
           <div className="c c2"></div>
           <div className="c c3"></div>
@@ -80,9 +85,12 @@ const Listen: React.FC = () => {
           <div className="c c28"></div>
           <div className="c c29"></div>
           <div className="c c30"></div>
-          {/* <div className="l"></div>                 */}    
-        <div className="spotify-wrapper">
-        <iframe
+          <div className="l"></div>                    
+</div> */}
+        {/* </div> */}
+        <div className="spotify-wrapper">   
+        <iframe style={{ borderRadius: "12px", zIndex: "1000" }} src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                     
+        {/* <iframe
           style={{ borderRadius: "12px", zIndex: "1000" }}
           src="https://open.spotify.com/embed/playlist/7iR7csX0rnBiSs3knrlbbn?si=b65db3b5b88447af?utm_source=generator"
           width="50%"
@@ -91,9 +99,9 @@ const Listen: React.FC = () => {
           loading="lazy"
           title="Spotify Playlist"
           className="spotify"
-        ></iframe>
+        ></iframe> */}
         </div>      
-      </div>          
+      {/* </div>           */}
     </div>
   );
 };

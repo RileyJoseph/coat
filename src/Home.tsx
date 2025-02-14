@@ -1,15 +1,13 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import gsap from "gsap";
-import BandcampWindow from "./windows/BandcampWindow";
-import BioWindow from "./windows/BioWindow";
-import LoungeWindow from "./windows/LoungeWindow";
 
 const blobCount = 20;
 
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const location = useLocation(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.pathname !== "/") return;
@@ -89,20 +87,15 @@ const Home: React.FC = () => {
       </div>
 
       <div id="windows" className="window-container panels flex items-center pulse-border">
-        {/* <div className="panels scene flex flex-wrap justify-center gap-32 w-full"> */}
-          <div className="window-div listen-panel text-xl flex flex-col items-center">
-            {/* <LoungeWindow /> */}
-            <h2 className="text-center mt-4 text-2xl secondary">「 l i s t e n 」</h2>
-          </div>
-          <div className="window-div bio-panel text-xl flex flex-col items-center">
-            {/* <BioWindow /> */}
-            <h2 className="text-center mt-4 text-2xl secondary">「 a b o u t 」</h2>
-          </div>
-          <div className="window-div bandcamp-panel text-xl flex flex-col items-center">
-            {/* <BandcampWindow /> */}
-            <h2 className="text-center mt-4 text-2xl secondary">「 b a n d c a m p 」</h2>
-          </div>
-        {/* </div> */}
+        <div className="window-div listen-panel justify-center panel text-xl flex flex-col items-center w-1/3" onClick={() => navigate("/listen")}>
+          <h2 className="text-center mt-4 text-2xl text-white">「 l i s t e n 」</h2>
+        </div>
+        <div className="window-div bio-panel justify-center text-xl panel flex flex-col items-center w-1/3" onClick={() => navigate("/bio")}>
+          <h2 className="text-center mt-4 text-2xl text-white">「 a b o u t 」</h2>
+        </div>
+        <div className="window-div bandcamp-panel justify-center text-xl panel flex flex-col items-center w-1/3"  onClick={() => window.open("https://coattheband.bandcamp.com/", "_blank")}>
+          <h2 className="text-center mt-4 text-2xl text-white">「 b a n d c a m p 」</h2>
+        </div>
       </div>
     </div>
   );
