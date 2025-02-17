@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         </div>      
 
 
-        <div className="w-full md:w-1/3 flex md:justify-end justify-center mt-6 md:mt-0 sm:w-1/2">
+        <div className="w-full md:w-1/3 flex md:justify-end justify-center mt-6 md:mt-0 sm:w-1/2 footer-icons">
           <div className="grid grid-cols-3 sm:grid-cols-3 md:flex space-x-4 md:space-x-4 gap-4 social-icons">
             <a href="https://coattheband.bandcamp.com/" target="_blank" rel="noopener noreferrer" className="fa fa-bandcamp"></a>
             <a href="https://www.facebook.com/profile.php?id=100088146293886#" target="_blank" className="fa fa-facebook"></a>
