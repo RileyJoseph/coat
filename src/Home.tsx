@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Live from "./Live";
+import Windows from "./Windows";
 import gsap from "gsap";
 
 const blobCount = 20;
@@ -78,30 +79,8 @@ const Home: React.FC = () => {
       </div>
 
       <Live />
-
-      {/* <div id="live" className="live flex items-center , pulse-border">
-        <h2 className="">Upcoming Shows:</h2>
-        <div className="shows">
-          <ul className="mt-8">
-            <li><span className="date">Feb. 14</span> <span className="location">The 51st St. Speakeasy <span className="city">Oklahoma City, OK</span></span><span className="time">9:00</span></li>
-            <li><span className="date">March 14th</span> <span className="location">The Blue Note <span className="city">Oklahoma City, OK</span></span><span className="time">9:00</span></li>
-            <li><span className="date">May 3rd</span> <span className="location">Resonant Head <span className="city">Oklahoma City, OK</span></span><span className="time">8:00</span></li>
-            <li><span className="date">June TBD</span> <span className="location">The Blue Note <span className="city">Oklahoma City, OK</span></span><span className="time">9:00</span></li>                    
-          </ul>                
-        </div>
-      </div> */}
-
-      <div id="windows" className="window-container panels flex items-center pulse-border">
-        <div className="window-div listen-panel justify-center panel text-xl flex flex-col items-center w-1/3" onClick={() => navigate("/listen")}>
-          <h2 className="text-center mt-4 text-2xl text-white">「 l i s t e n 」</h2>
-        </div>
-        <div className="window-div bio-panel justify-center text-xl panel flex flex-col items-center w-1/3" onClick={() => navigate("/bio")}>
-          <h2 className="text-center mt-4 text-2xl text-white">「 a b o u t 」</h2>
-        </div>
-        <div className="window-div bandcamp-panel justify-center text-xl panel flex flex-col items-center w-1/3"  onClick={() => window.open("https://coattheband.bandcamp.com/", "_blank")}>
-          <h2 className="text-center mt-4 text-2xl text-white">「 b a n d c a m p 」</h2>
-        </div>
-      </div>
+      
+      <Windows />
     </div>
   );
 };
