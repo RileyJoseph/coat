@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Live from "./Live";
 import gsap from "gsap";
 
 const blobCount = 20;
@@ -76,7 +77,9 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div id="live" className="live flex items-center , pulse-border">
+      <Live />
+
+      {/* <div id="live" className="live flex items-center , pulse-border">
         <h2 className="">Upcoming Shows:</h2>
         <div className="shows">
           <ul className="mt-8">
@@ -86,7 +89,7 @@ const Home: React.FC = () => {
             <li><span className="date">June TBD</span> <span className="location">The Blue Note <span className="city">Oklahoma City, OK</span></span><span className="time">9:00</span></li>                    
           </ul>                
         </div>
-      </div>
+      </div> */}
 
       <div id="windows" className="window-container panels flex items-center pulse-border">
         <div className="window-div listen-panel justify-center panel text-xl flex flex-col items-center w-1/3" onClick={() => navigate("/listen")}>

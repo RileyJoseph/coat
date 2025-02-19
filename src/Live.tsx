@@ -8,15 +8,15 @@ interface Show {
 }
 
 const shows: Show[] = [
-  { date: "Feb. 14", location: "The 51st St. Speakeasy", city: "Oklahoma City, OK", time: "9:00" },
   { date: "March 14th", location: "The Blue Note", city: "Oklahoma City, OK", time: "9:00" },
+  { date: "April 25", location: "Norman Music Festival", city: "West Stage", time: "7:00" },
   { date: "May 3rd", location: "Resonant Head", city: "Oklahoma City, OK", time: "8:00" },
   { date: "June TBD", location: "The Blue Note", city: "Oklahoma City, OK", time: "9:00" }
 ];
 
 const Live: React.FC = () => {
   return (
-    <div id="live" className="live">
+    <div id="live" className="live flex items-center , pulse-border">
       <h2 className="mt-32">Upcoming Shows:</h2>
       <div className="shows">
         <ul className="mt-8">
