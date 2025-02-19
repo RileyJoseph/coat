@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Windows: React.FC = () => {
+  // const location = useLocation(); 
+  const navigate = useNavigate();
   return (
     <div id="windows" className="window-container panels flex items-center pulse-border">
       <div className="window-div listen-panel justify-center panel text-xl flex flex-col items-center w-1/3" onClick={() => navigate("/listen")}>
