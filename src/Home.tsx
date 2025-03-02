@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Live from "./Live";
 import Windows from "./Windows";
 import gsap from "gsap";
@@ -9,7 +9,7 @@ const blobCount = 20;
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation(); 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     if (location.pathname !== "/") return;
