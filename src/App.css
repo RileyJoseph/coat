@@ -84,11 +84,8 @@ html, body {
   .about-us-text{ 
     flex-direction: column;
     background-color: black;
-    /* width: 100%; */
-    /* height: 500px; */
   }
   .bio-text{
-    /* background-color: rgba(0, 0, 0, 0.9); */
     width: 95%;
     font-size: 18px;
     padding: 20px;
@@ -122,7 +119,6 @@ html, body {
   z-index: 100;
   color: white;
   text-align: center;
-  /* background: rgba(0, 0, 0, 0.5); */
   h1{
     font-family: "Cinzel", serif;
     font-optical-sizing: auto;
