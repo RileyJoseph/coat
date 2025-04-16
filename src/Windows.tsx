@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const Windows: React.FC = () => {
-  // const location = useLocation(); 
   const navigate = useNavigate();
   return (
     <div id="windows" className="window-container panels flex items-center pulse-border">
