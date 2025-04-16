@@ -54,11 +54,10 @@ const Home: React.FC = () => {
     }
 
     return () => {
-      tl.kill(); // ✅ Ensure cleanup function explicitly returns void
+      tl.kill(); // Ensure cleanup function explicitly returns void
     };
 
   }, [location.pathname]); 
-
   return (
     <div>
       <div className="app-body">
