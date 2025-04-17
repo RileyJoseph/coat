@@ -221,8 +221,6 @@ html, body {
   }
 }
 
-
-
 .cyber-glow{
   margin: 0 0 16px 0;
   color: var(--primary-color);
@@ -446,7 +444,6 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   .fa:hover {
     opacity: 0.7;
   }
-
 }
 
 .home-btns\:bounceOrig:hover { animation: bounceOrig 1s infinite; }
@@ -566,8 +563,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   color: #888;
 }
 
-/* vapor lounge */
-
+/* VAPOR LOUNGE */
 .scene {
 	width: 100%;
 	position: relative;
