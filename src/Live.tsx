@@ -22,7 +22,7 @@ const Live: React.FC = () => {
       <div className="shows">
         <ul className="mt-8">
           {shows.map((show, index) => (
-            <li key={index}>
+            <li className="pointer" key={index}>
               <span className="date">{show.date}</span>
               <span className="location">
                 {show.location}

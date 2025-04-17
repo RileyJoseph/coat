@@ -148,6 +148,7 @@ html, body {
     padding-bottom: 80px;
   }
   ul li{
+    cursor: pointer;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -196,7 +197,6 @@ html, body {
 }
 
 /* LISTEN PAGE */
-
 .listen{
   padding-top: 80px;
   padding-bottom: 80px;
@@ -207,9 +207,6 @@ html, body {
   .playlist{
     padding: 0px 20px;
   }
-  /* position: absolute; */
-  /* top: 20%; */
-  /* left: 50%; */
 }
 
 @keyframes glowPulse {
