@@ -1110,6 +1110,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
   .footer-details {
     flex-wrap: wrap;
   }
+  
   .footer{
     .mobile-only{
       display: block;
