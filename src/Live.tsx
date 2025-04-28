@@ -5,14 +5,15 @@ interface Show {
   location: string;
   city: string;
   time: string;
+  past: boolean;
 }
 
 
 const shows: Show[] = [
-  { date: "April 25", location: "Norman Music Festival", city: "West Stage", time: "7:00" },
-  { date: "May 3rd", location: "Resonant Head", city: "Oklahoma City, OK", time: "8:00" },
-  { date: "May 16rd", location: "51st SpeakEasy", city: "Oklahoma City, OK", time: "9:00" },
-  { date: "June 28th", location: "The Blue Note", city: "Oklahoma City, OK", time: "9:00" }
+  { date: "April 25", location: "Norman Music Festival", city: "West Stage", time: "7:00", past: true },
+  { date: "May 3rd", location: "Resonant Head", city: "Oklahoma City, OK", time: "8:00", past: false },
+  { date: "May 16rd", location: "51st SpeakEasy", city: "Oklahoma City, OK", time: "9:00", past: false },
+  { date: "June 28th", location: "The Blue Note", city: "Oklahoma City, OK", time: "9:00", past: false }
 ];
 
 const Live: React.FC = () => {
