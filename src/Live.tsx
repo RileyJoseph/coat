@@ -8,7 +8,6 @@ interface Show {
   past: boolean;
 }
 
-
 const shows: Show[] = [
   // { date: "April 25", location: "Norman Music Festival", city: "West Stage", time: "7:00", past: true },
   { date: "May 3rd", location: "Resonant Head", city: "Oklahoma City, OK", time: "8:00", past: false },
