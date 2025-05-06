@@ -16,7 +16,6 @@ const shows: Show[] = [
   { date: "June 28th", location: "The Blue Note", city: "Oklahoma City, OK", time: "9:00", past: false }
 ];
 
-
 const Live: React.FC = () => {
   return (
     <div id="live" className="live flex items-center , pulse-border">
