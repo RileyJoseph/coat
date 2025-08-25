@@ -22,8 +22,8 @@ const Bio: React.FC = () => {
           <p>Support us by buying our music on <a className="underline" target="_blank" href="https://coattheband.bandcamp.com/">Bandcamp.</a></p>
           <p>Support Oklahoma Teachers <a className="underline" href="https://catapultrecordings.bandcamp.com/album/help-oklahoma-teachers" target="_blank">here.</a></p>
           <br />
-          <p><span className="blue">Hannah Edmondson</span> - vocals, EWI, guitar</p>
-          <p><span className="blue">Alex Coleman</span> - guitar, synth</p>
+          <p><span className="blue">Hannah Edmondson</span> - vocals, EWI, flute</p>
+          <p><span className="blue">Alex Coleman</span> - guitar, keys</p>
           <p><span className="blue">Justin McCullough</span> - bass</p>
           <p><span className="blue">Ryan Mcguire</span> - drums</p>
           <p><span className="blue">Riley Joseph</span> - guitar</p>
