@@ -54,6 +54,38 @@ html, body {
   }
 }
 
+/* .tv{
+  background-size: cover;
+  z-index: 100;
+} */
+
+.tv-container { 
+  background-color: black; 
+}
+
+
+#heat-map {
+  height: 100%;
+  width: 100%;
+  position: relative; 
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  filter: blur(40px) saturate(10);
+}
+#heat-map div {
+  height: 60%;
+  width: 60%;
+  background: radial-gradient(circle, #ff0044, #00dbde);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bg-color-black{
+  background-color: black;
+}
+
 .blue{
   color: #4f82b2;
 }
@@ -93,25 +125,6 @@ html, body {
   .bold{
     font-weight: bold;
   }
-}
-
-#heat-map {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  overflow: hidden;
-  filter: blur(40px) saturate(10);
-}
-#heat-map div {
-  height: 60%;
-  width: 60%;
-  background: #fc00ff;
-  background: radial-gradient(circle, #ff0044 , #00dbde);
-  position: absolute;
-  border-radius: 50%;
 }
 
 .hero-info{
