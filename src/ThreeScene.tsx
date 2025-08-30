@@ -95,6 +95,7 @@ export default function ThreeScene() {
 
     // loop
     
+
     let raf = 0;
     const animate = () => {
       raf = requestAnimationFrame(animate);
