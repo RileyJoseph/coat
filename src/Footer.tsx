@@ -3,41 +3,35 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white pt-12 pb-6 footer pulse-border text-center">
-    <div className="footer-content container mx-auto flex flex-col md:flex-row justify-between py-8">
-      <div className="footer-details w-full md:w-1/2 flex flex-col px-4 md:px-8 sm:px-4">
-        <div className="footer-logos procon text-left">
-          <h2>Booking:</h2>
-          <p className="md:pr-8 font-semibold">
-            For all booking inquires, please contact: <br />
-            <a href="mailto:coattheband@gmail.com" className="hover:underline">coattheband@gmail.com</a>
-          </p>      
-        </div>
-      </div>
-
-      <div className="footer-details w-full md:w-1/2 flex flex-col md:flex-row px-4 mt-8 md:mt-0 right-half ">
-
-        <div className="text-left w-full md:w-1/2 mx-auto">
-          <p className="text-xl font-bold footer-heading">PAGES</p>
-          <ul className="text-sm space-y-1">
-            {/* <li className="pt-2"><a href="/" className="hover:underline ">Home</a></li> */}
-            <li className="pt-2"><a href="/" className="hover:underline">Home</a></li>
-            <li className="pt-2"><a href="/bio" className="hover:underline ">About Us</a></li>       
-            <li className="pt-2"><a href="/listen" className="hover:underline">Listen</a></li>
-            <li className="pt-2"><a target="_blank" href="https://coattheband.bandcamp.com/" className="hover:underline ">Bandcamp</a></li>      
-            <li className="pt-2"><a href="/contact" className="hover:underline ">Contact</a></li>          
-          </ul>
-        </div>
-
-        <div className="footer-resume flex flex-col w-full md:w-1/2 text-left">
-          <p className="text-xl font-bold footer-heading md:text-left sm:text-left sm:pt-8 pt-8 md:pt-0">Thank You For Listening</p>
-          <p className="text-sm md:text-left sm:text-left">Password upon request.</p>
-
-          <div className="pt-4 w-full">
-
+      <div className="footer-content container mx-auto flex flex-col md:flex-row justify-between py-8">
+        <div className="footer-details w-full md:w-1/3 flex flex-col px-4 md:px-8 sm:px-4">
+          <div className="footer-logos procon text-left">
+            <h2>Booking:</h2>
+            <p className="md:pr-8 font-semibold">
+              For all booking inquires, please contact: <br />
+              <a href="mailto:coattheband@gmail.com" className="hover:underline">coattheband@gmail.com</a>
+            </p>      
           </div>
         </div>
 
-      </div>
+        <div className="footer-details w-full md:w-1/2 flex flex-col md:flex-row px-4 mt-8 md:mt-0 right-half">
+          <div className="text-left w-full md:w-1/2 mx-auto">
+            <p className="text-xl font-bold footer-heading">PAGES</p>
+            <ul className="text-sm space-y-1">
+              {/* <li className="pt-2"><a href="/" className="hover:underline ">Home</a></li> */}
+              <li className="pt-2"><a href="/" className="hover:underline">Home</a></li>
+              <li className="pt-2"><a href="/bio" className="hover:underline ">About Us</a></li>       
+              <li className="pt-2"><a href="/listen" className="hover:underline">Listen</a></li>
+              <li className="pt-2"><a target="_blank" href="https://coattheband.bandcamp.com/" className="hover:underline ">Bandcamp</a></li>      
+              <li className="pt-2"><a href="/contact" className="hover:underline ">Contact</a></li>          
+            </ul>
+          </div>
+
+          <div className="footer-resume flex flex-col w-full md:w-1/2 text-left">
+            <p className="text-xl font-bold footer-heading md:text-left sm:text-left sm:pt-8 pt-8 md:pt-0">Thank You For Listening</p>
+            <p className="text-sm md:text-left sm:text-left">Support local art.</p>
+          </div>
+        </div>
       </div>
 
       {/* <div className="container mx-auto flex flex-col md:flex-row justify-between px-8 sm:flex-row ">
@@ -68,6 +62,9 @@ const Footer: React.FC = () => {
             <a href="https://music.apple.com/us/artist/coat/1670318082" target="_blank" className="fa fa-apple"></a>
           </div>
         </div>
+        <div>
+          <p className="text-xs">Copyright @ 2025 Coat Music. All Rights Reserved.</p>
+        </div>        
     </footer>
 
   );
