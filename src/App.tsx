@@ -5,6 +5,7 @@ import Live from "./Live";
 import Footer from "./Footer";
 import Home from "./Home"; 
 import Bio from "./Bio";
+import Contact from "./Contact";
 import "./App.css";
 import ScrollTop from "./ScrollTop"; 
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/listen" element={<Listen />} />
         <Route path="/live" element={<Live />} />
         <Route path="/bio" element={<Bio />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
