@@ -94,6 +94,7 @@ export default function ThreeScene() {
     ro.observe(container);
 
     // loop
+    
     let raf = 0;
     const animate = () => {
       raf = requestAnimationFrame(animate);
