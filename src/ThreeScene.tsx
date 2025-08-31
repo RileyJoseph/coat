@@ -1,11 +1,17 @@
-// ThreeScene.tsx
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
-// import the font JSON directly (bundled by Vite)
-import helvetiker from 'three/examples/fonts/helvetiker_regular.typeface.json';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// Optional (only if your model is Draco-compressed):
+// import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+
+// ---- OPTION A: file in /public ----
+// const MODEL_URL = '/models/coat.gltf'; // or '/models/coat.glb'
+
+// ---- OPTION B: bundled asset (put file in src/assets) ----
+// import MODEL_URL from '../assets/coat.gltf?url';
+
+const MODEL_URL = '/models/control-panel.gltf'; // pick one option above and set this
 
 export default function ThreeScene() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,78 +20,67 @@ export default function ThreeScene() {
     const container = containerRef.current!;
     container.innerHTML = '';
 
-    // renderer
+    // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x0b0b0b, 1);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
     container.appendChild(renderer.domElement);
 
-    // scene & camera
+    // Scene & Camera
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0b0b0b);
+
     const camera = new THREE.PerspectiveCamera(
       60,
       container.clientWidth / container.clientHeight,
       0.1,
-      100
+      1000
     );
-    camera.position.set(2, 1.5, 4);
+    camera.position.set(3, 2, 5);
     camera.lookAt(0, 0, 0);
 
-    // controls
+    // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+    controls.minDistance = 1.2;   // tweak
+    controls.maxDistance = 10;  
     controls.target.set(0, 0, 0);
-    controls.update();
 
-    // lights
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.2));
-    const dir = new THREE.DirectionalLight(0xffffff, 1);
-    dir.position.set(5, 5, 5);
-    scene.add(dir);
+    // Lights (PBR-friendly)
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x3b3b3b, 0.9));
+    const key = new THREE.DirectionalLight(0xffffff, 1.2);
+    key.position.set(5, 6, 7);
+    key.castShadow = false;
+    scene.add(key);
 
-    // --- TEXT ---
-    const font = new FontLoader().parse(helvetiker as any);
+    // Load Model
+    const loader = new GLTFLoader();
 
-    const lines = [
-      'Coat',
-      'is a psychedelic rock band out of',
-      'Oklahoma City, Oklahoma'
-    ];
+    // If your GLTF is Draco-compressed, uncomment and host decoders in /public/draco/
+    // const draco = new DRACOLoader();
+    // draco.setDecoderPath('/draco/'); // put draco_wasm_wrapper.js & .wasm there
+    // loader.setDRACOLoader(draco);
 
-    const group = new THREE.Group();
-    const size = 0.5;            // text height
-    const depth = 0.06;          // extrusion thickness
-    const lineHeight = size * 1.4;
+    let root: THREE.Object3D | null = null;
+    let mixer: THREE.AnimationMixer | null = null;
 
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
-      roughness: 0.45,
-      metalness: 0.1
-    });
+    loader.load(
+      MODEL_URL,
+      (gltf) => {
+        scene.add(gltf.scene);
+        fitCameraToObject(camera, gltf.scene, controls);
+      },
+      undefined,
+      (err) => {
+        console.error('GLTF load error', err, 'URL:', MODEL_URL);
+      }
+    );
 
-    lines.forEach((line, i) => {
-      const geo = new TextGeometry(line, {
-        font,
-        size,
-        height: depth,
-        curveSegments: 8,
-        bevelEnabled: false
-      });
-      // center each line horizontally
-      geo.computeBoundingBox();
-      geo.center();
-
-      const mesh = new THREE.Mesh(geo, material);
-      // vertical layout: center the block and offset each line
-      mesh.position.y = ((lines.length - 1) * lineHeight) / 2 - i * lineHeight;
-      group.add(mesh);
-    });
-
-    scene.add(group);
-
-    // resize
-    const ro = new ResizeObserver(entries => {
+    // Resize (container changes)
+    const ro = new ResizeObserver((entries) => {
       const { width, height } = entries[0].contentRect;
       renderer.setSize(width, height);
       camera.aspect = width / height;
@@ -93,31 +88,69 @@ export default function ThreeScene() {
     });
     ro.observe(container);
 
-    // loop
-
-    
-
+    // Render loop
     let raf = 0;
+    const clock = new THREE.Clock();
     const animate = () => {
       raf = requestAnimationFrame(animate);
+      const dt = clock.getDelta();
+      mixer?.update(dt);
       controls.update();
       renderer.render(scene, camera);
     };
     animate();
 
-    // cleanup
+    // Cleanup
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
       controls.dispose();
-      group.children.forEach((m) => {
-        (m as THREE.Mesh).geometry.dispose();
-      });
-      (material as THREE.Material).dispose();
+      // draco?.dispose();
+      if (root) {
+        root.traverse((obj) => {
+          if ((obj as THREE.Mesh).isMesh) {
+            const mesh = obj as THREE.Mesh;
+            mesh.geometry?.dispose?.();
+            const mat = mesh.material as THREE.Material | THREE.Material[];
+            if (Array.isArray(mat)) mat.forEach((m) => m.dispose?.());
+            else mat?.dispose?.();
+          }
+        });
+        scene.remove(root);
+      }
       renderer.dispose();
       container.innerHTML = '';
     };
   }, []);
 
   return <div ref={containerRef} className="relative w-full h-[60vh]" />;
+}
+
+/**
+ * Fit the camera & controls to an object’s bounding sphere.
+ */
+function fitCameraToObject(
+  camera: THREE.PerspectiveCamera,
+  object: THREE.Object3D,
+  controls?: OrbitControls
+) {
+  const box = new THREE.Box3().setFromObject(object);
+  const size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
+
+  // Set controls target to model center
+  controls?.target.copy(center);
+
+  // Compute distance so the object fits in view vertically
+  const maxSize = Math.max(size.x, size.y, size.z);
+  const halfFovY = THREE.MathUtils.degToRad(camera.fov / 2);
+  const distance = (maxSize * 0.5) / Math.tan(halfFovY);
+
+  // Position camera on a diagonal, looking at center
+  const dir = new THREE.Vector3(1, 0.6, 1).normalize();
+  camera.position.copy(center.clone().add(dir.multiplyScalar(distance * 1.4)));
+  camera.near = Math.max(0.1, distance / 100);
+  camera.far = distance * 100;
+  camera.updateProjectionMatrix();
+  camera.lookAt(center);
 }
