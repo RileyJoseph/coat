@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Live from "./Live";
 import Windows from "./Windows";
 import gsap from "gsap";
-import ThreeScene from "./ThreeScene";
+// import ThreeScene from "./ThreeScene";
 
 const blobCount = 20;
 
