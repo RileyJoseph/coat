@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="footer-content container mx-auto flex flex-col md:flex-row justify-between py-8">
         <div className="footer-details w-full md:w-1/3 flex flex-col px-4 md:px-8 sm:px-4">
           <div className="footer-logos procon text-left">
-            <h2>Booking:</h2>
+            <h2>Booking</h2>
             <p className="md:pr-8 font-semibold">
               For all booking inquires, please contact: <br />
               <a href="mailto:coattheband@gmail.com" className="hover:underline">coattheband@gmail.com</a>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
       </div> */}
 
       
-        <div className="w-full text-right flex md:justify-end justify-center mt-6 md:mt-0 footer-icons pr-12">
+        <div className="w-full text-right flex md:justify-end justify-center mt-6 md:mt-0 footer-icons md:pr-12 py-8">
           <div className="grid grid-cols-3 sm:grid-cols-3 md:flex space-x-4 md:space-x-4 gap-4 social-icons">
             <a href="https://coattheband.bandcamp.com/" target="_blank" rel="noopener noreferrer" className="fa fa-bandcamp"></a>
             <a href="https://www.facebook.com/profile.php?id=100088146293886#" target="_blank" className="fa fa-facebook"></a>

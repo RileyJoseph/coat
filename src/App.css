@@ -18,10 +18,15 @@ html, body {
   width: 100%;
   z-index: 1000;
   height: 80px;
+  .home-btn{
+    font-size: 18px;
+    color: grey;
+  }  
   li{
     padding: 10px;
     a{
-      font-size: 14px;
+      font-size: 16px;
+      color: grey;
     }
   }
 }
@@ -34,6 +39,8 @@ html, body {
   border: 2px solid black;
   border-radius: 10px;
   /* color: white; */
+  background-color: white;
+  color: black;
 }
 
 .dropdown-menu{
@@ -63,6 +70,15 @@ html, body {
   background-color: black; 
 }
 
+.flowers{
+  animation: colorRotate 5s linear infinite;
+}
+
+@keyframes colorRotate {
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
 
 #heat-map {
   height: 100%;
@@ -83,7 +99,7 @@ html, body {
 }
 
 .bg-color-black{
-  background-color: black;
+  /* background-color: white; */
 }
 
 .blue{
@@ -95,7 +111,7 @@ html, body {
 }
 
 .app-body {
-  background: #0e016f;
+  background: white;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -116,6 +132,7 @@ html, body {
   .about-us-text{ 
     flex-direction: column;
     background-color: black;
+    min-height: 80vh;
   }
   .bio-text{
     width: 95%;

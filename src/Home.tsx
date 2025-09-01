@@ -62,27 +62,24 @@ const Home: React.FC = () => {
   return (
     <div>
       <div className="app-body bg-black min-h-screen">
-        {/* <div className="relative mx-auto w-full max-w-[1400px] h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)] bg-color-black">
-          <div className="tv-bg relative block w-full h-full bg-center bg-no-repeat bg-contain" style={{ backgroundImage: "url('/src/images/AdobeStock_527183187.png')" }}>
-            <div className="blur pointer-events-none  inset-0" />
-            <div id="heat-map" ref={containerRef} className=" inset-0"></div>
-
+        <div className="relative mx-auto w-full max-w-[1400px] h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)] bg-color-black">
+          <div className="tv-bg relative block w-full h-full bg-center bg-no-repeat bg-contain flowers" style={{ backgroundImage: "url('/images/coat-flowers2.png')" }}>
+            {/* <div className="blur pointer-events-none  inset-0" /> */}
+            {/* <div id="heat-map" ref={containerRef} className=" inset-0"></div> */}
+{/* 
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-6">
               <h1 className="landing text-6xl md:text-8xl font-extrabold tracking-tight">COAT</h1>
-              <h3 className="mt-4 text-lg md:text-2xl opacity-90">
-                Is a psychedelic rock band out of <br /> Oklahoma City, Oklahoma
-              </h3>
+              <h3 className="mt-4 text-lg md:text-2xl opacity-90">Is a psychedelic rock band out of <br /> Oklahoma City, Oklahoma</h3>
               <button
                 className="fullscreen-link btn mt-16 border border-white/60 px-6 py-3 rounded hover:bg-white/10 transition"
-                onClick={() => document.getElementById('live')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+                onClick={() => document.getElementById('live')?.scrollIntoView({ behavior: 'smooth' })}>
                 See Live
               </button>
-            </div>
+            </div> */}
 
           </div>
-        </div> */}
-        <ThreeScene />
+        </div>
+        {/* <ThreeScene /> */}
       </div>
 
       <Live />

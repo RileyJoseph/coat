@@ -7,10 +7,10 @@ const Bio: React.FC = () => {
       {/* <img className="bio-pic w-half md:w-1/2" src="/images/coat-marquee.JPG" alt="picture of the band Coat" /> */}
       <div className="bio-pic w-half md:w-full sm:w-full"></div>
       <div className="about-us-text flex items-center justify-center w-half md:w-full sm:w-full">
-        <h1 className="blue">About Us</h1>        
+        <h1 className="">About Us</h1>        
         <div className="bio-text">        
           <p>Coat is a 5-piece psychedelic rock band out of Oklahoma City, Oklahoma. 
-          Bringing together members of OKC groups Twiggs, Swim Fan, Computer Girl and 
+          Bringing together members of OKC groups Computer Girl, Twiggs, Swim Fan, and 
           Johnny Manchild, Coat is a group of musicians with a wide range of 
           musical backgrounds and interests. Only one EP into their life as a band, the 
           group's music already spans a wide sonic landscape pulling inspiration from artists like Angel Olsen 

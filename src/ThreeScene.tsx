@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import gsap from 'gsap';
 // Optional (only if your model is Draco-compressed):
 // import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
@@ -28,6 +29,78 @@ export default function ThreeScene() {
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
     container.appendChild(renderer.domElement);
+
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2();
+    const interactive: THREE.Object3D[] = []; // push clickable meshes here
+
+    let hovered: THREE.Object3D | null = null;
+    let pressed: THREE.Object3D | null = null;
+    let isDragging = false;
+    let downXY = { x: 0, y: 0 };
+
+    function ndcFromEvent(e: PointerEvent) {
+      const rect = renderer.domElement.getBoundingClientRect();
+      pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+
+
+    function pickTop(e: PointerEvent) {
+      ndcFromEvent(e);
+      raycaster.setFromCamera(pointer, camera);
+      const hits = raycaster.intersectObjects(interactive, true);
+      return hits[0]?.object ?? null;
+    }
+
+    const onMove = (e: PointerEvent) => {
+      const hit = pickTop(e);
+      setHover(hit);
+      if (pressed) {
+        const dx = e.clientX - downXY.x;
+        const dy = e.clientY - downXY.y;
+        isDragging = isDragging || (dx * dx + dy * dy > 4); // small threshold
+      }
+    };
+
+    const onDown = (e: PointerEvent) => {
+      const hit = pickTop(e);
+      pressed = hit;
+      isDragging = false;
+      downXY = { x: e.clientX, y: e.clientY };
+      // pause orbiting while pressing a button
+      controls.enabled = !pressed;
+      if (pressed) gsap.to(pressed.scale, { x: 0.97, y: 0.97, z: 0.97, duration: 0.1 });
+    };
+    
+    const onUp = (e: PointerEvent) => {
+      const hit = pickTop(e);
+      if (pressed) gsap.to(pressed.scale, { x: 1, y: 1, z: 1, duration: 0.12 });
+      controls.enabled = true;
+    
+      // click if: pressed existed, not dragged, and pointer still over same object
+      if (pressed && !isDragging && hit && hit === pressed) {
+        (pressed.userData.onClick as (() => void) | undefined)?.();
+      }
+      pressed = null;
+    };
+    
+    renderer.domElement.addEventListener('pointermove', onMove);
+    renderer.domElement.addEventListener('pointerdown', onDown);
+    renderer.domElement.addEventListener('pointerup', onUp);    
+
+    function setHover(obj: THREE.Object3D | null) {
+      if (hovered === obj) return;
+      // reset previous
+      if (hovered) {
+        gsap.to(hovered.scale, { x: 1, y: 1, z: 1, duration: 0.15, overwrite: true });
+      }
+      hovered = obj;
+      container.style.cursor = hovered ? 'pointer' : 'default';
+      if (hovered) {
+        gsap.to(hovered.scale, { x: 1.05, y: 1.05, z: 1.05, duration: 0.15, overwrite: true });
+      }
+    }
 
     // Scene & Camera
     const scene = new THREE.Scene();
@@ -105,6 +178,9 @@ export default function ThreeScene() {
       cancelAnimationFrame(raf);
       ro.disconnect();
       controls.dispose();
+      renderer.domElement.removeEventListener('pointermove', onMove);
+      renderer.domElement.removeEventListener('pointerdown', onDown);
+      renderer.domElement.removeEventListener('pointerup', onUp);      
       // draco?.dispose();
       if (root) {
         root.traverse((obj) => {
