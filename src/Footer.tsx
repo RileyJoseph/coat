@@ -34,6 +34,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
+
       {/* <div className="container mx-auto flex flex-col md:flex-row justify-between px-8 sm:flex-row ">
       <h2 className="mobile-only">Coat</h2>
         <div className="footer-details w-full md:w-2/3 flex flex-col md:flex-row md:justify-left sm:w-1/2">
