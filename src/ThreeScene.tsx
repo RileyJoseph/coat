@@ -167,7 +167,7 @@ export default function ThreeScene() {
     const animate = () => {
       raf = requestAnimationFrame(animate);
       const dt = clock.getDelta();
-      mixer?.update(dt);
+      // mixer?.update(dt);
       controls.update();
       renderer.render(scene, camera);
     };
@@ -182,18 +182,18 @@ export default function ThreeScene() {
       renderer.domElement.removeEventListener('pointerdown', onDown);
       renderer.domElement.removeEventListener('pointerup', onUp);      
       // draco?.dispose();
-      if (root) {
-        root.traverse((obj) => {
-          if ((obj as THREE.Mesh).isMesh) {
-            const mesh = obj as THREE.Mesh;
-            mesh.geometry?.dispose?.();
-            const mat = mesh.material as THREE.Material | THREE.Material[];
-            if (Array.isArray(mat)) mat.forEach((m) => m.dispose?.());
-            else mat?.dispose?.();
-          }
-        });
-        scene.remove(root);
-      }
+      // if (root) {
+      //   root.traverse((obj) => {
+      //     if ((obj as THREE.Mesh).isMesh) {
+      //       const mesh = obj as THREE.Mesh;
+      //       mesh.geometry?.dispose?.();
+      //       const mat = mesh.material as THREE.Material | THREE.Material[];
+      //       if (Array.isArray(mat)) mat.forEach((m) => m.dispose?.());
+      //       else mat?.dispose?.();
+      //     }
+      //   });
+      //   scene.remove(root);
+      // }
       renderer.dispose();
       container.innerHTML = '';
     };
