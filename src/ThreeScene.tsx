@@ -137,8 +137,8 @@ export default function ThreeScene() {
     // draco.setDecoderPath('/draco/'); // put draco_wasm_wrapper.js & .wasm there
     // loader.setDRACOLoader(draco);
 
-    let root: THREE.Object3D | null = null;
-    let mixer: THREE.AnimationMixer | null = null;
+    // let root: THREE.Object3D | null = null;
+    // let mixer: THREE.AnimationMixer | null = null;
 
     loader.load(
       MODEL_URL,
@@ -163,10 +163,10 @@ export default function ThreeScene() {
 
     // Render loop
     let raf = 0;
-    const clock = new THREE.Clock();
+    // const clock = new THREE.Clock();
     const animate = () => {
       raf = requestAnimationFrame(animate);
-      const dt = clock.getDelta();
+      // const dt = clock.getDelta();
       // mixer?.update(dt);
       controls.update();
       renderer.render(scene, camera);
