@@ -26,7 +26,7 @@ html, body {
     padding: 10px;
     a{
       font-size: 16px;
-      color: grey;
+      color: white;
     }
   }
 }
@@ -80,6 +80,11 @@ html, body {
   }
 }
 
+/* .bg-flowers{
+  background-image: url("/images/flowers-bg1.jpg");
+  opacity: .5;
+} */
+
 #heat-map {
   height: 100%;
   width: 100%;
@@ -111,7 +116,8 @@ html, body {
 }
 
 .app-body {
-  background: white;
+  /* background: white; */
+  background: black;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -135,9 +141,10 @@ html, body {
     min-height: 80vh;
   }
   .bio-text{
-    width: 95%;
+    width: 80%;
     font-size: 18px;
     padding: 20px;
+    text-align: left;
   }
   .bold{
     font-weight: bold;
@@ -453,6 +460,13 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
     border: 2px solid black;
   }
 }
+
+/* .footer-bg{
+  background-image: url("/images/footer-bg2.png");
+  background-size: cover;
+  background-color: rgba(0,0,0,0.6);
+  background-blend-mode: overlay;
+} */
 
 .footer{
   a{

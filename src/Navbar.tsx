@@ -30,7 +30,7 @@ const Navbar: React.FC = ({ }) => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
-            className="dropdown px-4 py-2 text-gray bg-color-white rounded" 
+            className="dropdown px-4 py-2 text-gray rounded" 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
             Menu

@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
       {/* <img className="bio-pic w-half md:w-1/2" src="/images/coat-marquee.JPG" alt="picture of the band Coat" /> */}
       <div className="bio-pic w-half md:w-full sm:w-full"></div>
       <div className="about-us-text flex items-center justify-center w-half md:w-full sm:w-full">
-        <h1 className="blue">Contact</h1>        
+        <h1 className="">Contact</h1>        
         <div className="bio-text">        
           <p>For all booking inquries please contact: <br />
           <a href="mailto:coattheband@gmail.com" className="hover:underline">coattheband@gmail.com</a>
