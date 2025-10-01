@@ -17,7 +17,7 @@ const shows: Show[] = [
 
 const Live: React.FC = () => {
   return (
-    <div id="live" className="live flex items-center , pulse-border">
+    <div id="live" className="live flex items-center pulse-border">
       <h2 className="mt-32">Upcoming Shows:</h2>
       <div className="shows">
         <ul className="mt-8">
