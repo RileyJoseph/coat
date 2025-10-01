@@ -6,7 +6,7 @@ const Bio: React.FC = () => {
     <div className="about-us flex min-h-screen">
       {/* <img className="bio-pic w-half md:w-1/2" src="/images/coat-marquee.JPG" alt="picture of the band Coat" /> */}
       <div className="bio-pic w-half md:w-full sm:w-full"></div>
-      <div className="about-us-text flex items-center justify-center w-half md:w-full sm:w-full">
+      <div className="about-us-text flex items-center justify-center w-half md:w-full sm:w-full md:pt-24">
         <h1 className="">About Us</h1>        
         <div className="bio-text">        
           <p>Coat is a 5-piece psychedelic rock band out of Oklahoma City, Oklahoma. 
@@ -28,7 +28,7 @@ const Bio: React.FC = () => {
           <p><span className="blue">Ryan Mcguire</span> - drums</p>
           <p><span className="blue">Riley Joseph</span> - guitar</p>
           <br />
-          <p className="bold">Coat is anti-facist and promotes love and inclusion. <br /> Bigots can get fucked.</p>
+          <p className="bold text-center">Coat is anti-facist and promotes love and inclusion. <br /> Bigots can get fucked.</p>
           
         </div>    
       </div>

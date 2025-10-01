@@ -62,7 +62,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <div className="app-body bg-black min-h-screen">
-        <div className="relative mx-auto w-full max-w-[1400px] h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)] bg-color-black">
+        <div className="relative mx-auto w-full max-w-[800px] h-[calc(100vh-36rem)] md:h-[calc(100vh-25rem)] bg-color-black">
           <div className="tv-bg relative block w-full h-full bg-center bg-no-repeat bg-contain flowers" style={{ backgroundImage: "url('/images/coat-flowers5.png')" }}>
             {/* <div className="blur pointer-events-none  inset-0" /> */}
             {/* <div id="heat-map" ref={containerRef} className=" inset-0"></div> */}
