@@ -27,6 +27,12 @@ const Bio: React.FC = () => {
           <p><span className="blue">Justin McCullough</span> - bass</p>
           <p><span className="blue">Ryan Mcguire</span> - drums</p>
           <p><span className="blue">Riley Joseph</span> - guitar</p>
+          <p><span className="blue">Riley Joseph</span> - guitar</p>
+          <p><span className="blue">Riley Joseph</span> - guitar</p>
+          <p><span className="blue">Riley Joseph</span> - guitar</p>
+
+          <p><span className="blue">Riley Joseph</span> - guitar</p><p><span className="blue">Riley Joseph</span> - guitar</p>
+          <p><span className="blue">Riley Joseph</span> - guitar</p>
           <br />
           <p className="bold text-center">Coat is anti-facist and promotes love and inclusion. <br /> Bigots can get fucked.</p>
           
