@@ -172,7 +172,7 @@ html, body {
 .live{
   min-height: 100vh;
   flex-direction: column;
-  background-image: url("/images/band-psych.JPG");
+  background-image: url("/images/live-band-psych.jpg");
   background-position: 50% 5%;
   background-size: cover;
   background-repeat: no-repeat;  
@@ -660,7 +660,7 @@ ion-icon.down-arrow:hover, ion-icon.down-arrow:focus {
 }
 
 .listen-panel {
-  background-image: url("/images/hannah-psych.JPG");
+  background-image: url("/images/hannah-psych.jpg");
 }
 
 .bio-panel {
