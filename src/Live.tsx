@@ -10,8 +10,8 @@ interface Show {
 
 const shows: Show[] = [
   // { date: "April 25", location: "Norman Music Festival", city: "West Stage", time: "7:00", past: true },
-  { date: "Oct. 18th", location: "Uptown Outside", city: "Oklahoma City, OK", time: "9:00 PM", past: false },
-  { date: "Nov. 1st", location: "51st SpeakEasy", city: "Oklahoma City, OK", time: "9:00 PM", past: false },
+  // { date: "Oct. 18th", location: "Uptown Outside", city: "Oklahoma City, OK", time: "9:00 PM", past: false },
+  { date: "Nov. 1st", location: "51st Street SpeakEasy", city: "Oklahoma City, OK", time: "9:00 PM", past: false },
   { date: "Nov. 7th", location: "612 in Paseo", city: "Oklahoma City, OK", time: "7:00 PM", past: false }
 ];
 
